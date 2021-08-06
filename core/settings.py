@@ -6,7 +6,7 @@ AUTH_USER_MODEL = "api.User"
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#l3aj-&fpj02f)bf0*vd*lqvo6_01xul*yr1vsjszu)dr-wrje'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
