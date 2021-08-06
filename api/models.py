@@ -13,5 +13,5 @@ class User(AbstractUser):
         refresh = RefreshToken.for_user(self)
         return {
             'refresh': str(refresh),
-            'acess': str(refresh.access_token)
+            'access': str(refresh.access_token)
         }
