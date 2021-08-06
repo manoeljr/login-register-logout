@@ -1,11 +1,12 @@
 import datetime
 from pathlib import Path
 
+AUTH_USER_MODEL = "api.User"
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-id@48$knqj3n^!elpbll)0130y7fba4ptx+jg(@pwux3l)&d#x'
+SECRET_KEY = 'django-insecure-#l3aj-&fpj02f)bf0*vd*lqvo6_01xul*yr1vsjszu)dr-wrje'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -23,7 +24,7 @@ INSTALLED_APPS = [
 ]
 
 APPS_INTERNAL = [
-    'auth',
+    'api',
 ]
 APPS_REST = [
     'rest_framework',
@@ -41,7 +42,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'app.urls'
+ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
     {
@@ -59,7 +60,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'app.wsgi.application'
+WSGI_APPLICATION = 'core.wsgi.application'
 
 # Database
 DATABASES = {
@@ -99,15 +100,13 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # REST
-
-AUTH_USER_MODEL = "first.User"
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
+    'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ]
 }
 
 SIMPLE_JWT = {
-    'ACESS_TOKEN_LIFETIME':datetime.timedelta(minutes=1),
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=1),
     'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=1),
 }
